@@ -1,0 +1,20 @@
+<html><head>
+    <title>Target: Dice Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+
+  <body>
+    <h1><%= @dice %>d<%= @sides %></h1>
+
+    <a href="/process_roll?dice=<%= @dice %>&sides=<%= @sides %>">Roll again</a> |
+    <a href="/">Go back home</a>
+
+    <ol>
+      <% for i in (1..@dice) %>
+        <li>Result: <%= @rolls[i-1] %></li>
+      <% end %>
+    </ol>
+
+  </body>
+</html>
